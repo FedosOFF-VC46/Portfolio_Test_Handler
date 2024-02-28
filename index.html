@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">
+        <!--Левая колонка-->
+        <div id="leftcol">
+            <div class="content">
+                <p><img src="images/photo.jpg" alt="" class="round">
+                <h1>Личные данные</h1>
+                <hr>                    
+                <div id="data">
+                <h3>ФИО</h3>
+                <p>Данилов Дмитрий Евгеньевич</p>
+                <h3>Дата рождения</h3>
+                <p>05.08.1999</p>
+                <h3>Номер телефона</h3>
+                <p>+79192716574</p>
+                <h3>Email</h3>
+                <p>buty@mail.com</p>
+                </div>
+
+                <div id="interes">
+                    <h3>Интересы</h3>
+                    <hr> 
+                    <ul>Футбол</ul>
+                    <ul>Баскетбол</ul>
+                    <ul>Волейбол</ul>
+                </div>
+                <div id="lang">
+                    <h3>Языки</h3>
+                    <hr> 
+                    <ul>Английский</ul>
+                    <ul>Испанский</ul>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!--Контент-->
+        <div id="main">
+            <div id="logo">
+                <h1>Данилов Дмитрий Евгеньевич</h1>
+            </div>
+                <hr>
+                <div class="contentlogo">
+                    <p>Lorem ipsu21312312312312321312m dolor sit amet consectetur adipisicing elit. Sit facilis harum perferendis aliquam, modi quae hic culpa laboriosam illo quia molestias nulla alias expedita unde possimus rem sint molestiae blanditiis.</p>
+                </div>
+                <div class="workexp"><h2>Опыт работы</h2></div>
+                <hr>
+                <div id="workitem">
+                    <ul>Макдональдс</ul>
+                    <ul>Бургеркинг</ul>
+                    <ul>КФС</ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        document.addEventListener("DOMContentLoaded", function(event) {
+          var name = getParameterByName('name');
+          var dob = getParameterByName('dob');
+          var city = getParameterByName('city');
+          var phone = getParameterByName('phone');
+          var email = getParameterByName('email');
+      
+          var dataDiv = document.getElementById('data');
+          dataDiv.innerHTML = '<h3>ФИО</h3><p>' + name + '</p>' +
+                              '<h3>Дата рождения</h3><p>' + dob + '</p>' +
+                              '<h3>Город</h3><p>' + city + '</p>' +
+                              '<h3>Номер телефона</h3><p>' + phone + '</p>' +
+                              '<h3>Email</h3><p>' + email + '</p>';
+      });
+      </script>
+
+</body>
+</html>
